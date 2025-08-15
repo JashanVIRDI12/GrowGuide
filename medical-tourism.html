@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Tourism - Grow Guides</title>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Nata Sans Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-main': '#2675C6',
+            'blue-deep': '#00529B',
+            'gray-text': '#5D6B82',
+            'gray-light': '#F5F5F5',
+            'black-text': '#212121',
+            'red-accent': '#D64541',
+            'green-accent': '#37BC9B'
+          },
+          fontFamily: {
+            'nata-sans': ['Nata Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Force Nata Sans font loading -->
+  <style>
+    * {
+      font-family: 'Nata Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Include Navbar -->
+<div id="navbar-placeholder"></div>
+
+<!-- Medical Tourism Hero -->
+<section class="hero" style="background: linear-gradient(135deg, var(--red-accent) 0%, var(--blue-main) 50%, var(--blue-deep) 100%);">
+  <div class="container">
+    <div class="hero-content">
+      <h1>World-Class Medical Tourism</h1>
+      <p>Access affordable, high-quality healthcare worldwide with our comprehensive medical tourism services. From consultation to recovery, we're with you every step of the way.</p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+        <a href="finance.html" class="btn btn-secondary">Get Financing</a>
+      </div>
+
+      <!-- Medical Tourism Stats -->
+      <div class="flex justify-center mt-12 space-x-8 text-white/80">
+        <div class="text-center">
+          <div class="text-2xl font-bold">70%</div>
+          <div class="text-sm">Cost Savings</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold">50+</div>
+          <div class="text-sm">Partner Hospitals</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold">15+</div>
+          <div class="text-sm">Countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Medical Tourism -->
+<section class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose Medical Tourism?</h2>
+      <p class="section-subtitle">Discover the advantages of seeking medical treatment abroad with our expert guidance and support.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="card stagger-item hover-lift">
+        <div class="card-icon" style="background: linear-gradient(135deg, rgba(38, 117, 198, 0.1), rgba(38, 117, 198, 0.2)); color: var(--blue-main);">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-black-text">Significant Cost Savings</h3>
+        <p class="text-gray-text mb-4">Save up to 70% on medical procedures without compromising on quality. Get the same treatments at a fraction of the cost.</p>
+
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Up to 70% cost reduction</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">No insurance complications</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Transparent pricing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card stagger-item hover-lift">
+        <div class="card-icon" style="background: linear-gradient(135deg, rgba(55, 188, 155, 0.1), rgba(55, 188, 155, 0.2)); color: var(--green-accent);">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-black-text">World-Class Healthcare</h3>
+        <p class="text-gray-text mb-4">Access internationally accredited hospitals with board-certified specialists and cutting-edge medical technology.</p>
+
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">JCI accredited hospitals</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Board-certified doctors</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Latest medical technology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card stagger-item hover-lift">
+        <div class="card-icon medical">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-black-text">No Waiting Lists</h3>
+        <p class="text-gray-text mb-4">Skip long waiting periods and get immediate access to treatments. Your health can't wait, and neither should you.</p>
+
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Immediate scheduling</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Flexible appointment times</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-green-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm text-gray-text">Priority booking available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Medical Tourism Services -->
+<section class="process-complete">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Comprehensive Services</h2>
+      <p class="section-subtitle">From initial consultation to post-treatment care, we handle every aspect of your medical journey.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card stagger-item hover-lift">
+        <div class="process-icon step-1">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+          </svg>
+        </div>
+        <h4 class="process-title">Medical Consultation</h4>
+        <p class="process-description">Expert evaluation of your medical needs with specialist doctors to determine the best treatment options and destinations.</p>
+      </div>
+
+      <div class="process-card stagger-item hover-lift">
+        <div class="process-icon step-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+        </div>
+        <h4 class="process-title">Hospital Selection</h4>
+        <p class="process-description">Careful selection of the best hospitals and doctors based on your specific medical condition and preferences.</p>
+      </div>
+
+      <div class="process-card stagger-item hover-lift">
+        <div class="process-icon step-3">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+          </svg>
+        </div>
+        <h4 class="process-title">Travel Planning</h4>
+        <p class="process-description">Complete travel arrangements including visa assistance, flight bookings, and accommodation near the hospital.</p>
+      </div>
+
+      <div class="process-card stagger-item hover-lift">
+        <div class="process-icon step-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          </svg>
+        </div>
+        <h4 class="process-title">24/7 Support</h4>
+        <p class="process-description">Round-the-clock support throughout your journey, from arrival to recovery and follow-up care back home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact" class="services">
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Content -->
+      <div class="animate-fade-in-left">
+        <h2 class="section-title text-left mb-6">Popular Medical Tourism Destinations</h2>
+
+        <div class="space-y-6">
+          <div class="card p-4 hover-lift">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-red-accent bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-red-accent font-bold">🇹🇭</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-black-text">Thailand</h4>
+                <p class="text-gray-text text-sm">Cosmetic surgery, dental care, cardiac procedures</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-4 hover-lift">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-green-accent bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-green-accent font-bold">🇮🇳</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-black-text">India</h4>
+                <p class="text-gray-text text-sm">Cancer treatment, orthopedic surgery, fertility treatments</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-4 hover-lift">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-blue-main bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-blue-main font-bold">🇸🇬</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-black-text">Singapore</h4>
+                <p class="text-gray-text text-sm">Advanced cancer care, neurosurgery, transplants</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-main bg-opacity-5 rounded-lg p-4">
+            <h4 class="font-semibold text-black-text mb-2">✨ Why These Destinations?</h4>
+            <ul class="text-sm text-gray-text space-y-1">
+              <li>• International hospital accreditation</li>
+              <li>• English-speaking medical staff</li>
+              <li>• Advanced medical technology</li>
+              <li>• Established medical tourism infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simplified Contact Form -->
+      <div class="form-container animate-fade-in-right">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-red-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-red-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-black-text mb-2">Start Your Medical Journey</h2>
+          <p class="text-gray-text">Get personalized consultation and treatment planning from our medical tourism experts.</p>
+        </div>
+
+        <form id="medical-tourism-form" class="space-y-6">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" id="name" name="name" required class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email" required class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="query" class="form-label">Your Query *</label>
+            <textarea id="query" name="query" rows="6" required placeholder="Please describe your medical condition, treatment type needed, preferred destination, timeline, and any specific requirements..." class="form-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full">
+            Get Free Consultation
+          </button>
+
+          <p class="text-xs text-gray-text text-center">
+            By submitting, you agree to our terms. Your medical information is completely confidential and secure.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories -->
+<section class="process-complete" style="background: var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Success Stories</h2>
+      <p class="section-subtitle">Real experiences from patients who trusted us with their medical journey.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card text-center stagger-item hover-lift">
+        <div class="w-16 h-16 bg-blue-main bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">👨‍⚕️</span>
+        </div>
+        <h4 class="font-semibold text-black-text mb-2">Cardiac Surgery</h4>
+        <p class="text-gray-text text-sm mb-3">"Saved 60% on my heart surgery in Thailand. The care was exceptional and recovery was smooth."</p>
+        <div class="flex justify-center">
+          <div class="flex text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-center stagger-item hover-lift">
+        <div class="w-16 h-16 bg-green-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">👩‍⚕️</span>
+        </div>
+        <h4 class="font-semibold text-black-text mb-2">Fertility Treatment</h4>
+        <p class="text-gray-text text-sm mb-3">"After years of trying, we found success in India. The doctors were amazing and support was incredible."</p>
+        <div class="flex justify-center">
+          <div class="flex text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-center stagger-item hover-lift">
+        <div class="w-16 h-16 bg-red-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">🦷</span>
+        </div>
+        <h4 class="font-semibold text-black-text mb-2">Dental Implants</h4>
+        <p class="text-gray-text text-sm mb-3">"Complete smile makeover in Thailand for fraction of home country cost. Professional and caring team."</p>
+        <div class="flex justify-center">
+          <div class="flex text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Begin Your Medical Journey?</h2>
+      <p class="cta-subtitle">Get expert consultation, personalized treatment planning, and comprehensive support for your medical tourism needs.</p>
+
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-white">Get Free Consultation</a>
+        <a href="finance.html" class="btn-outline-white">Explore Financing</a>
+      </div>
+
+      <div class="contact-bar">
+        <a href="tel:+919876543210" class="contact-bar-item">
+          <div class="contact-bar-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <span class="contact-bar-text">Emergency Support: +91 98765 43210</span>
+        </a>
+
+        <div class="contact-separator"></div>
+
+        <a href="mailto:medical@growguides.com" class="contact-bar-item">
+          <div class="contact-bar-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="contact-bar-text">medical@growguides.com</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Function to load HTML components
+  function loadComponent(elementId, filePath) {
+    fetch(filePath)
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error('Error loading component:', error));
+  }
+
+  // Load navbar and footer from components folder
+  document.addEventListener('DOMContentLoaded', function() {
+    loadComponent('navbar-placeholder', 'components/navbar.html');
+    loadComponent('footer-placeholder', 'components/footer.html');
+  });
+</script>
+
+<script src="js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('medical-tourism-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const button = e.target.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+
+        button.innerHTML = '<span class="loading"></span> Processing...';
+        button.disabled = true;
+
+        setTimeout(() => {
+          alert('Thank you! Your medical tourism consultation request has been submitted. Our experts will contact you within 24 hours to discuss your requirements and create a personalized treatment plan.');
+          form.reset();
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2000);
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
