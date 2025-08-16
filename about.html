@@ -44,8 +44,50 @@
 </head>
 <body>
 
-<!-- Include Navbar -->
-<div id="navbar-placeholder"></div>
+<header class="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo">
+            <span class="logo-text">Grow Guides</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="about.html" class="nav-link">About</a>
+
+        </nav>
+
+        <!-- Desktop CTA Buttons -->
+        <div class="nav-buttons">
+            <button onclick="window.location.href='#contact'" class="btn btn-primary">Contact</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-toggle" id="mobile-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-link">Home</a>
+                <a href="services.html" class="mobile-link">Services</a>
+                <a href="about.html" class="mobile-link">About</a>
+            </nav>
+            <div class="mobile-buttons">
+                <button onclick="window.location.href='#contact'" class="btn btn-primary">Contact</button>
+            </div>
+        </div>
+    </div>
+</header>
 
 <!-- About Hero -->
 <section class="hero">
@@ -273,28 +315,81 @@
     </div>
 </section>
 
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
+<footer class="glassmorphism-footer">
+    <div class="footer-backdrop"></div>
+    <div class="container">
+        <div class="footer-content">
 
-<script>
-// Function to load HTML components
-function loadComponent(elementId, filePath) {
-  fetch(filePath)
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById(elementId).innerHTML = data;
-    })
-    .catch(error => console.error('Error loading component:', error));
-}
+            <!-- Brand Section -->
+            <div class="footer-brand-glass">
+                <div class="brand-logo-glass">
+                    <div class="logo-icon-glass">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="logo-text-glass">Grow Guides</span>
+                </div>
+                <p class="brand-description-glass">Your trusted partner for medical tourism and commodity trading solutions.</p>
+            </div>
 
-// Load navbar and footer from components folder
-document.addEventListener('DOMContentLoaded', function() {
-  loadComponent('navbar-placeholder', 'components/navbar.html');
-  loadComponent('footer-placeholder', 'components/footer.html');
-});
+            <!-- Quick Links Section -->
+            <div class="footer-section-glass">
+                <h4 class="section-title-glass">Quick Links</h4>
+                <div class="links-grid-glass">
+                    <a href="index.html" class="link-glass">Home</a>
+                    <a href="about.html" class="link-glass">About</a>
+                    <a href="services.html" class="link-glass">Services</a>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="footer-section-glass">
+                <h4 class="section-title-glass">Our Services</h4>
+                <div class="links-grid-glass">
+                    <a href="medical-tourism.html" class="link-glass">Medical Tourism</a>
+                    <a href="finance.html" class="link-glass">Commodity Trading</a>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section-glass">
+                <h4 class="section-title-glass">Contact Info</h4>
+                <div class="contact-items-glass">
+                    <div class="contact-item-glass">
+                        <span class="contact-label-glass">Phone</span>
+                        <a href="tel:+919876543210" class="contact-value-glass">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item-glass">
+                        <span class="contact-label-glass">Email</span>
+                        <a href="mailto:info@growguides.com" class="contact-value-glass">info@growguides.com</a>
+                    </div>
+                    <div class="contact-item-glass">
+                        <span class="contact-label-glass">Location</span>
+                        <span class="contact-value-glass">New Delhi, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom-glass">
+            <div class="footer-bottom-content-glass">
+                <div class="copyright-glass">
+                    &copy; 2025 Grow Guides. All rights reserved.
+                </div>
+                <div class="footer-policies-glass">
+                    <a href="#" class="policy-link-glass">Privacy Policy</a>
+                    <a href="#" class="policy-link-glass">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/navbar.js">
 </script>
-
-<script src="js/script.js"></script>
 </body>
 </html>
 
