@@ -37,3 +37,28 @@ For Gmail to work with nodemailer, you need to create an App Password:
 After deployment, test the forms on:
 - Medical Tourism page: `/medical-tourism.html`
 - Finance/Commodity Trading page: `/finance.html`
+
+## Troubleshooting
+
+If you're still getting 404 errors after deployment:
+
+1. **Test the API endpoints directly**:
+   - Visit `https://your-domain.vercel.app/api/test` in your browser
+   - You should see a JSON response: `{"success":true,"message":"API is working!","timestamp":"..."}`
+
+2. **Check Vercel deployment logs**:
+   - Go to your Vercel dashboard
+   - Click on your latest deployment
+   - Check the "Functions" tab to see if the API functions are being built
+
+3. **Verify file structure**:
+   - Make sure the `/api` folder is in the root of your repository
+   - Ensure the API files have the correct `.js` extension
+
+4. **Force redeploy**:
+   - In Vercel dashboard, go to your project
+   - Click "Redeploy" to force a fresh deployment
+
+5. **Check environment variables**:
+   - Ensure `EMAIL_USER` and `EMAIL_PASS` are set correctly
+   - Make sure there are no extra spaces or quotes in the values
