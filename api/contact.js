@@ -40,14 +40,22 @@ export default async function handler(req, res) {
       });
     }
 
-    // Email configuration
-    const transporter = nodemailer.createTransporter({
+    // Email configuration - FIXED: Changed createTransporter to createTransport
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+      },
+      // Additional security options
+      secure: true,
+      tls: {
+        rejectUnauthorized: false
       }
     });
+
+    // Verify transporter configuration
+    await transporter.verify();
 
     // Determine subject and styling based on form type
     const formType = type || 'general';
@@ -67,7 +75,7 @@ export default async function handler(req, res) {
       title = 'General Inquiry';
     }
 
-    // Email content
+    // Email content with better sanitization
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -80,14 +88,14 @@ export default async function handler(req, res) {
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #212121; margin-top: 0;">Contact Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Name:</strong> ${name.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+            <p><strong>Email:</strong> ${email.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+            <p><strong>Phone:</strong> ${phone.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
           </div>
           
           <div style="background-color: #e8f4fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #212121; margin-top: 0;">Query Details</h3>
-            <p style="white-space: pre-wrap; line-height: 1.6;">${query}</p>
+            <p style="white-space: pre-wrap; line-height: 1.6;">${query.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
           </div>
           
           <div style="background-color: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0;">
@@ -106,8 +114,7 @@ export default async function handler(req, res) {
     console.log('Email sent successfully:', {
       type: formType,
       name,
-      email,
-      phone,
+      email: email.substring(0, 3) + '***', // Log partial email for privacy
       timestamp: new Date().toISOString()
     });
 
@@ -117,7 +124,16 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Contact Form Error:', error);
+    console.error('Contact Form Error:', error.message);
+    
+    // More specific error handling
+    if (error.code === 'EAUTH') {
+      return res.status(500).json({ 
+        success: false, 
+        message: 'Email authentication failed. Please contact administrator.' 
+      });
+    }
+    
     res.status(500).json({ 
       success: false, 
       message: 'An error occurred while submitting your inquiry. Please try again.' 
