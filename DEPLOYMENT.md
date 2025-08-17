@@ -45,6 +45,7 @@ If you're still getting 404 errors after deployment:
 1. **Test the API endpoints directly**:
    - Visit `https://your-domain.vercel.app/api/test` in your browser
    - You should see a JSON response: `{"success":true,"message":"API is working!","timestamp":"..."}`
+   - Visit `https://your-domain.vercel.app/api/contact` (should return "Method not allowed" for GET)
 
 2. **Check Vercel deployment logs**:
    - Go to your Vercel dashboard
@@ -59,6 +60,14 @@ If you're still getting 404 errors after deployment:
    - In Vercel dashboard, go to your project
    - Click "Redeploy" to force a fresh deployment
 
-5. **Check environment variables**:
+5. **Alternative solution - Use Formspree**:
+   If serverless functions still don't work, you can use Formspree:
+   - Go to https://formspree.io/
+   - Create a free account
+   - Create a new form
+   - Replace the form action with your Formspree endpoint
+   - Example: `<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">`
+
+6. **Check environment variables**:
    - Ensure `EMAIL_USER` and `EMAIL_PASS` are set correctly
    - Make sure there are no extra spaces or quotes in the values

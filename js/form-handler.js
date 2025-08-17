@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     query: formData.get('query')
                 };
 
-                const response = await fetch('/api/medical-tourism', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({ ...data, type: 'medical-tourism' })
                 });
 
                 const result = await response.json();
@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     query: formData.get('query')
                 };
 
-                const response = await fetch('/api/commodity-trading', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({ ...data, type: 'commodity-trading' })
                 });
 
                 const result = await response.json();
