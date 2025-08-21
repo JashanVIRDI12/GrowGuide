@@ -1,7 +1,7 @@
 {
   "name": "growguide",
   "version": "1.0.0",
-  "description": "Grow Guide - Medical Tourism and Commodity Trading Services",
+  "description": "Grow Guide - Medical Tourism Services",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "nodemon": "^3.0.2"
   },
-  "keywords": ["medical-tourism", "commodity-trading", "consulting"],
+  "keywords": ["medical-tourism", "consulting"],
   "author": "Grow Guides",
   "license": "MIT"
 }

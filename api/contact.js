@@ -65,10 +65,6 @@ export default async function handler(req, res) {
       subject = 'New Medical Tourism Inquiry - Grow Guides';
       color = '#2675C6';
       title = 'Medical Tourism Inquiry';
-    } else if (formType === 'commodity-trading') {
-      subject = 'New Commodity Trading Inquiry - Grow Guides';
-      color = '#37BC9B';
-      title = 'Commodity Trading Inquiry';
     } else {
       subject = 'New Contact Form Inquiry - Grow Guides';
       color = '#6c757d';

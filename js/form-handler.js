@@ -1,9 +1,9 @@
-// Form Handler for Medical Tourism and Commodity Trading
+// Form Handler for Medical Tourism
 
 // Medical Tourism Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const medicalForm = document.getElementById('medical-tourism-form');
-    const tradingForm = document.getElementById('trading-form');
+    const tradingForm = null;
 
     // Medical Tourism Form
     if (medicalForm) {
@@ -54,54 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Commodity Trading Form
-    if (tradingForm) {
-        tradingForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = tradingForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            try {
-                // Show loading state
-                submitBtn.textContent = 'Submitting...';
-                submitBtn.disabled = true;
-                
-                const formData = new FormData(tradingForm);
-                const data = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    query: formData.get('query')
-                };
-
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ ...data, type: 'commodity-trading' })
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    showNotification('Success! Your commodity trading inquiry has been submitted. We will contact you soon.', 'success');
-                    tradingForm.reset();
-                } else {
-                    showNotification(result.message || 'An error occurred. Please try again.', 'error');
-                }
-
-            } catch (error) {
-                console.error('Form submission error:', error);
-                showNotification('Network error. Please check your connection and try again.', 'error');
-            } finally {
-                // Reset button state
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
+    // Additional non-medical forms removed
 });
 
 // Notification function

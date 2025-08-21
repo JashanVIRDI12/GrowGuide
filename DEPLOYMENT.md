@@ -36,7 +36,7 @@ For Gmail to work with nodemailer, you need to create an App Password:
 
 After deployment, test the forms on:
 - Medical Tourism page: `/medical-tourism.html`
-- Finance/Commodity Trading page: `/finance.html`
+ 
 
 ## Troubleshooting
 

@@ -1,11 +1,10 @@
-# Grow Guides - Medical Tourism & Commodity Trading
+# Grow Guides - Medical Tourism
 
-A comprehensive website offering medical tourism and commodity trading services with integrated email notification system.
+A comprehensive website offering medical tourism services with integrated email notification system.
 
 ## Features
 
 - **Medical Tourism Services**: Complete medical tourism consultation and planning
-- **Commodity Trading**: Expert commodity trading guidance and platform access
 - **Email Notifications**: Automatic email alerts for form submissions
 - **Responsive Design**: Modern, mobile-friendly interface
 - **Real-time Form Handling**: Instant form submission with user feedback
@@ -53,7 +52,7 @@ The website will be available at `http://localhost:3000`
 
 ### Form Submissions
 
-When users submit forms on either the Medical Tourism or Commodity Trading pages:
+When users submit forms on the Medical Tourism page:
 
 1. **Frontend**: JavaScript captures form data and sends it to the backend
 2. **Backend**: Express server processes the submission and sends an email
@@ -79,14 +78,13 @@ GrowGuide/
 │   ├── form-handler.js    # Frontend form submission logic
 │   └── navbar.js          # Navigation functionality
 ├── medical-tourism.html   # Medical tourism page with form
-├── finance.html           # Commodity trading page with form
+├── (no finance page)
 └── ... (other HTML/CSS files)
 ```
 
 ## API Endpoints
 
 - `POST /api/medical-tourism` - Handles medical tourism form submissions
-- `POST /api/commodity-trading` - Handles commodity trading form submissions
 
 ## Troubleshooting
 

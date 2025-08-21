@@ -86,68 +86,6 @@ app.post('/api/medical-tourism', async (req, res) => {
   }
 });
 
-// Commodity Trading Form Submission
-app.post('/api/commodity-trading', async (req, res) => {
-  try {
-    const { name, email, phone, query } = req.body;
-
-    // Validate required fields
-    if (!name || !email || !phone || !query) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'All fields are required' 
-      });
-    }
-
-    // Email content
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Send to your Gmail
-      subject: 'New Commodity Trading Inquiry - Grow Guides',
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #37BC9B; border-bottom: 2px solid #37BC9B; padding-bottom: 10px;">
-            New Commodity Trading Inquiry
-          </h2>
-          
-          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #212121; margin-top: 0;">Contact Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-          </div>
-          
-          <div style="background-color: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #212121; margin-top: 0;">Trading Requirements</h3>
-            <p style="white-space: pre-wrap; line-height: 1.6;">${query}</p>
-          </div>
-          
-          <div style="background-color: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 0; color: #856404;">
-              <strong>Source:</strong> Commodity Trading Page<br>
-              <strong>Timestamp:</strong> ${new Date().toLocaleString()}
-            </p>
-          </div>
-        </div>
-      `
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
-
-    res.json({ 
-      success: true, 
-      message: 'Your commodity trading inquiry has been submitted successfully. We will contact you soon!' 
-    });
-
-  } catch (error) {
-    console.error('Commodity Trading Form Error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'An error occurred while submitting your inquiry. Please try again.' 
-    });
-  }
-});
 
 // Serve HTML files
 app.get('/', (req, res) => {
@@ -158,9 +96,7 @@ app.get('/medical-tourism', (req, res) => {
   res.sendFile(path.join(__dirname, 'medical-tourism.html'));
 });
 
-app.get('/finance', (req, res) => {
-  res.sendFile(path.join(__dirname, 'finance.html'));
-});
+// Routes for static pages
 
 // Start server
 app.listen(PORT, () => {
