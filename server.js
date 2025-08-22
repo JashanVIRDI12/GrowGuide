@@ -96,6 +96,11 @@ app.get('/medical-tourism', (req, res) => {
   res.sendFile(path.join(__dirname, 'medical-tourism.html'));
 });
 
+// Redirect legacy services paths to medical tourism
+app.get(['/services', '/services.html'], (req, res) => {
+  res.redirect(301, '/medical-tourism');
+});
+
 // Routes for static pages
 
 // Start server
