@@ -2,11 +2,11 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(40px) scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -24,22 +24,22 @@
 @keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-60px) scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
     }
 }
 
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(60px) scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
     }
 }
 
@@ -93,32 +93,103 @@
     }
 }
 
+@keyframes smoothSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Animation Classes */
 .animate-fade-in-left {
-    animation: slideInLeft 0.6s ease forwards;
+    animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .animate-fade-in-right {
-    animation: slideInRight 0.6s ease forwards;
+    animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .hover-lift:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
+    transform: translateY(-8px) scale(1.02);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Stagger animations */
+/* Modern Stagger animations */
 .stagger-item {
     opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
+    transform: translateY(30px) scale(0.95);
+    animation: smoothSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.stagger-item:nth-child(1) { animation-delay: 0.1s; }
-.stagger-item:nth-child(2) { animation-delay: 0.2s; }
-.stagger-item:nth-child(3) { animation-delay: 0.3s; }
-.stagger-item:nth-child(4) { animation-delay: 0.4s; }
-.stagger-item:nth-child(5) { animation-delay: 0.5s; }
-.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.stagger-item:nth-child(2) { animation-delay: 0.15s; }
+.stagger-item:nth-child(3) { animation-delay: 0.25s; }
+.stagger-item:nth-child(4) { animation-delay: 0.35s; }
+.stagger-item:nth-child(5) { animation-delay: 0.45s; }
+.stagger-item:nth-child(6) { animation-delay: 0.55s; }
+
+/* Enhanced hover effects */
+.stagger-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Card entrance animations */
+.card, .process-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover, .process-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth page transitions */
+* {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced button animations */
+.btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Intersection Observer Animations */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth entrance for sections */
+.section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: sectionEntrance 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes sectionEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Additional Animation for fade out */
 @keyframes fadeOut {
