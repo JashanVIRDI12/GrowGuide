@@ -41,18 +41,43 @@ export default async function handler(req, res) {
     }
 
     // Email configuration - GoDaddy Professional Mail
+    // Try multiple configurations for GoDaddy
+    const godaddyConfigs = [
+      {
+        host: 'smtpout.secureserver.net',
+        port: 80,
+        secure: false,
+        requireTLS: false
+      },
+      {
+        host: 'smtpout.secureserver.net',
+        port: 3535,
+        secure: false,
+        requireTLS: false
+      },
+      {
+        host: 'relay-hosting.secureserver.net',
+        port: 25,
+        secure: false,
+        requireTLS: false
+      }
+    ];
+
+    // Use the first config (port 80 is often most reliable for GoDaddy)
     const transporter = nodemailer.createTransport({
       host: 'smtpout.secureserver.net',
-      port: 587,
-      secure: false, // Use STARTTLS
+      port: 80,
+      secure: false,
+      requireTLS: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       },
       tls: {
-        ciphers: 'SSLv3',
         rejectUnauthorized: false
-      }
+      },
+      debug: true,
+      logger: true
     });
 
     // Verify transporter configuration
