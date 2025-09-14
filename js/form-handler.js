@@ -7,25 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Medical Tourism Form
     if (medicalForm) {
-        // Create loader overlay
-        const loaderOverlay = document.createElement('div');
-        loaderOverlay.className = 'form-loader-overlay';
-        loaderOverlay.innerHTML = `
-            <div class="loader-spinner"></div>
-            <div class="loader-text">
-                Sending your inquiry<span class="loader-dots"></span>
-            </div>
-            <div class="loader-progress">
-                <div class="loader-progress-bar"></div>
-            </div>
-        `;
-        
-        // Add loader to form container
-        const formContainer = medicalForm.closest('.form-container');
-        if (formContainer) {
-            formContainer.appendChild(loaderOverlay);
-        }
-        
         medicalForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -33,15 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = submitBtn.textContent;
             
             try {
-                // Show beautiful loader
-                if (loaderOverlay) {
-                    loaderOverlay.classList.add('active');
-                }
-                
-                // Disable form interactions
+                // Show loading state
+                submitBtn.textContent = 'Submitting...';
                 submitBtn.disabled = true;
-                const formInputs = medicalForm.querySelectorAll('input, textarea, button');
-                formInputs.forEach(input => input.disabled = true);
                 
                 const formData = new FormData(medicalForm);
                 const data = {
@@ -72,16 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Form submission error:', error);
                 showNotification('Network error. Please check your connection and try again.', 'error');
             } finally {
-                // Hide loader
-                if (loaderOverlay) {
-                    loaderOverlay.classList.remove('active');
-                }
-                
-                // Re-enable form interactions
+                // Reset button state
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-                const formInputs = medicalForm.querySelectorAll('input, textarea, button');
-                formInputs.forEach(input => input.disabled = false);
             }
         });
     }
