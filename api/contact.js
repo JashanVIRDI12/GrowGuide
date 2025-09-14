@@ -40,16 +40,17 @@ export default async function handler(req, res) {
       });
     }
 
-    // Email configuration - FIXED: Changed createTransporter to createTransport
+    // Email configuration - GoDaddy Professional Mail
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtpout.secureserver.net',
+      port: 587,
+      secure: false, // Use STARTTLS
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       },
-      // Additional security options
-      secure: true,
       tls: {
+        ciphers: 'SSLv3',
         rejectUnauthorized: false
       }
     });
